@@ -1,0 +1,52 @@
+@import "simplelightbox/dist/simple-lightbox.min.css";
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .gallery-item {
+    list-style: none;
+    overflow: clip;
+    position: relative;
+
+    .gallery-link {
+      cursor: zoom-in;
+    }
+
+    &:hover {
+      .gallery-image {
+        transform: scale(1.1);
+      }
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: 300ms ease 0s;
+
+      @media (max-width: 576px) {
+        height: 100px;
+      }
+    }
+  }
+}
+
+.simple-lightbox {
+  &.sl-wrapper {
+    background: rgba(46, 47, 66, 0.80);
+    color: #ffffff;
+
+    .sl-navigation button,
+    .sl-counter,
+    .sl-close {
+      color: #ffffff;
+    }
+  }
+}
